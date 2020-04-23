@@ -54,7 +54,7 @@ while i < user_number:
 for itm in my_list: print(itm)
 
 
-# print(my_list[0][1].get('название'))
+print(my_list[0][1].get('название'))
 i = 0
 
 item = []
@@ -74,7 +74,6 @@ result['название'] = item
 result['цена'] = price
 result['количество'] = amount
 result['eд'] = set(unit)
-
 
 print(result)
 
