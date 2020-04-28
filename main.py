@@ -1,3 +1,3 @@
-import sys
+import os
 
-print(sys.argv)
+print(os.system('ls'))
