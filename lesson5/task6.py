@@ -10,9 +10,22 @@ with open('task6.txt', 'r', encoding='UTF-8') as file:
         data = line.split(' ')
         # print(data)
         key = data[0].split(':')[0]
-        print(key)
-        value = line.split('(')
-        print(value)
-# print(my_dict)
+        my_dict[key] = data[1:]
+        # print(key)
+
+print(my_dict)
+new_dict = {}
+for key, value in my_dict.items(): #Информатика ['', '', '100(л)', '', '', '50(пр)', '', '', '20(лаб)\n']
+    result = 0
+    for i in value:
+        if i.split('(')[0].isdigit():
+            result += int(i.split('(')[0])
+        else:
+            continue
+    # print(result)
+    new_dict[key] = result
+
+print(new_dict)
+
 
 
