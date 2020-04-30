@@ -45,4 +45,3 @@ tmp_1.draw()
 tmp_2.draw()
 tmp_3.draw()
 
-print(1)
