@@ -4,7 +4,7 @@
 from random import randint
 
 numbers = [randint(-100, 100) for i in range(20)]
-# print(numbers)
+print(sum(numbers))
 
 
 with open('task5.txt', 'w', encoding='UTF-8') as file:
@@ -13,6 +13,8 @@ with open('task5.txt', 'w', encoding='UTF-8') as file:
     file.writelines(my_str)
 
 with open('task5.txt', 'r', encoding='UTF-8') as file2:
-    data = file2.read().split(' ')
-    result = sum(map(float, data))
-    print(result)
+    numbers_1 = map(float, file2.readline().split(' '))
+print(sum(numbers_1))
+print(sum(numbers_1))
+
+assert sum(numbers_1) == sum(numbers), 'Сработал Assert'

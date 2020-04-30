@@ -11,7 +11,6 @@ with open('task6.txt', 'r', encoding='UTF-8') as file:
         # print(data)
         key = data[0].split(':')[0]
         my_dict[key] = data[1:]
-        # print(key)
 
 print(my_dict)
 new_dict = {}
