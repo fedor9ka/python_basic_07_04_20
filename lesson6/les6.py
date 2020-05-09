@@ -1,6 +1,7 @@
 import random
 import time
 
+
 class Wolf:
     _proto = True
 
@@ -22,8 +23,8 @@ class Homo(object):
     population = 0
 
 
-    def __init__(self, name: str, surname):
-        self.surname = surname
+    def __init__(self, name: str):
+        # self.surname = surname
         self.name = name
         Homo.population += 1
 
@@ -52,21 +53,23 @@ class WereWolf(HomoSap, Wolf):
         super().__init__(colour, *args, **kwargs) #HomoSap.__init__(self, colour, *args, **kwargs)
         Wolf.__init__(self, eye)
 
-    def ask(self, var_test): #переопредлили поведение ask в зависимости от времени, можно задать и переменную, но это
+    def ask(self): #переопредлили поведение ask в зависимости от времени, можно задать и переменную, но это
         # не хорошо, если метод который раньше ничего не принмал - начал принимать аргументы. Мы изменяем лишь поведение
         # этого свойства
-        print(var_test)
+        # print(var_test)
         now = int(time.time())
         if now & 1:
-            self.moon()
+            #self.moon() например нам нужно иногда дергать метод ask y Homo, а иногда у Wolf
+            Wolf.ask(self)
         else:
-            print('Who i am')
+            #print('Who i am')
+            super().ask()
 #
 # vasya = Homo(name='Вася')
 # petya = Homo(name='Петя')
 
 new_vasya = HomoSap('red', name='New_vasya')
 wr = WereWolf(colour='Gray', eye= 'Green', name='Joe')
-wr.ask('Hello')
+# wr.ask('Hello')
 
 print(Homo.population)
